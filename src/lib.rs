@@ -5,18 +5,20 @@
 //!
 //! ## Example Usage
 //! ```rust
-//! let mut credentials = AWSCredentials::load().unwrap();
+//! let mut credentials = AWSCredentials::load()?;
 //! credentials
 //!     .with_profile("default")
 //!     .set_access_key_id("ACCESS_KEY")
 //!     .set_secret_access_key("SECRET_KEY");
-//! credentials.write().unwrap();
+//! credentials.write()?;
 //! ```
 
 use derive_builder::Builder;
 use dirs::home_dir;
 use std::{
     collections::HashMap,
+    error::Error,
+    fmt,
     fs::OpenOptions,
     io::{BufWriter, Write},
 };
@@ -49,6 +51,17 @@ pub enum Errors {
     FileNotFound(String),
     FailedToParse,
 }
+
+impl fmt::Display for Errors {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            Errors::FileNotFound(path) => write!(f, "File not found: {}", path),
+            Errors::FailedToParse => write!(f, "Failed to parse"),
+        }
+    }
+}
+
+impl Error for Errors {}
 
 /// Contains a mapping of profiles to AWS credentials.
 /// Provides methods to load from, and save to, the default AWS credentials file.

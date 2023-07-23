@@ -1,6 +1,6 @@
 [package]
 name = "aws_cred"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 repository = "https://github.com/klaatu01/aws_cred"
 description = "Library for modifying aws credential files"
