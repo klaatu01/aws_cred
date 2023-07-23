@@ -1,6 +1,6 @@
-# `aws_cred`: AWS Credentials Management Library
+# `aws_cred`: AWS Credentials Manipulation Library
 
-`aws_cred` is a Rust library that provides intuitive management of AWS credentials. Store and edit your AWS credentials in the standard format with ease, removing the need for manual file editing.
+`aws_cred` is a Rust library that provides intuitive manipulation of AWS credentials. Store and edit your AWS credentials in the standard format with ease, removing the need for manual file editing.
 
 ## Features
 

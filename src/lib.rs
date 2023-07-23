@@ -1,4 +1,4 @@
-//! # AWS Credentials Management Library
+//! # AWS Credentials Manipulation Library
 //!
 //! This library provides a convenient way to load, modify, and save AWS credentials stored in the standard AWS credentials file format.
 //! With this library, you can easily manage profiles and their associated credentials without having to manually edit the credentials file.
