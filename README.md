@@ -43,3 +43,7 @@ credentials.write().unwrap();
 ```
 
 For a detailed exploration and additional samples, refer to the [API docs](https://docs.rs/aws_cred/0.0.1/aws_cred).
+
+## License
+
+This crate is distributed under the terms of the MIT license. See the [LICENSE](https://opensource.org/licenses/MIT) file for details.
