@@ -20,7 +20,7 @@ Integrate `aws_cred` into your project by adding the following line in your `Car
 
 ```toml
 [dependencies]
-aws_cred = "0.0.2"
+aws_cred = "0.0.3"
 ```
 
 Then, run the following to compile:

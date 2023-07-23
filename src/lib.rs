@@ -24,7 +24,7 @@ use std::{
 };
 
 /// Represents AWS credentials with fields for access and secret keys.
-#[derive(Clone, Builder, Debug)]
+#[derive(Clone, Builder, Debug, Default)]
 pub struct Credentials {
     pub secret_access_key: String,
     pub access_key_id: String,
@@ -86,6 +86,10 @@ impl AWSCredentials {
     }
 
     pub fn with_profile(&mut self, profile: &str) -> CredentialsSetter {
+        if self.credentials.get(profile).is_none() {
+            self.credentials
+                .insert(profile.to_string(), Credentials::default());
+        }
         CredentialsSetter::new(self, profile)
     }
 

@@ -1,10 +1,10 @@
 [package]
 name = "aws_cred"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 repository = "https://github.com/klaatu01/aws_cred"
 description = "Library for modifying aws credential files"
-documentation = "https://docs.rs/aws_cred/0.0.1/aws_cred"
+documentation = "https://docs.rs/aws_cred/0.0.3/aws_cred"
 readme = "README.md"
 license = "MIT"
 keywords = ["aws", "credentials", "aws_cred"]
