@@ -20,7 +20,7 @@ Integrate `aws_cred` into your project by adding the following line in your `Car
 
 ```toml
 [dependencies]
-aws_cred = "0.1.0"
+aws_cred = "0.0.2"
 ```
 
 Then, run the following to compile:
@@ -32,14 +32,12 @@ $ cargo build
 ## How to Use
 
 ```rust
-use aws_cred::*;
-
-let mut credentials = AWSCredentials::load().unwrap();
+let mut credentials = AWSCredentials::load()?;
 credentials
     .with_profile("default")
     .set_access_key_id("ACCESS_KEY")
     .set_secret_access_key("SECRET_KEY");
-credentials.write().unwrap();
+credentials.write()?;
 ```
 
 For a detailed exploration and additional samples, refer to the [API docs](https://docs.rs/aws_cred/0.0.1/aws_cred).
