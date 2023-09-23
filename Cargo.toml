@@ -1,14 +1,27 @@
 [package]
 name = "aws_cred"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 repository = "https://github.com/klaatu01/aws_cred"
 description = "Library for modifying aws credential files"
-documentation = "https://docs.rs/aws_cred/0.0.3/aws_cred"
+documentation = "https://docs.rs/aws_cred/0.0.4/aws_cred"
 readme = "README.md"
 license = "MIT"
-keywords = ["aws", "credentials", "aws_cred"]
+keywords = ["aws", "credentials", "aws_cred", "rusoto", "aws-sdk"]
 
 [dependencies]
 derive_builder = "0.12.0"
 dirs = "5.0.1"
+async-std = { version = "1.12.0", optional = true }
+rusoto_sts = { version = "0.48.0", optional = true }
+aws-sdk-sts = { version = "0.31.1", optional = true }
+
+[dev-dependencies]
+tempfile = "3.8.0"
+tokio = { version = "1.32.0", features = ["rt", "test-util", "macros"] }
+
+[features]
+default = []
+async_std = ["async-std"]
+rusoto = ["rusoto_sts"]
+aws_sdk = ["aws-sdk-sts"]
